@@ -1,0 +1,25 @@
+body {
+    background-color: #ccc;
+    text-align: center;
+}
+canvas {
+    touch-action: none;
+    background-color: #fff;
+    width: 640px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    user-select: none;
+}
+
+button {
+   margin-top: 10px; 
+   padding: 5px 15px;
+   background-color: #16e0bd;
+   color: #303030;
+   font-size: 110%;
+   border: 2px solid #16e0bd;
+   border-radius: 4px;
+}
+
