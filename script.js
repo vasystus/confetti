@@ -4,6 +4,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 conx = context.canvas.width/2;
 cony = context.canvas.height/2;
+const button = document.getElementById("button");
 
 let confetti = [];
 const confettiCount = 300;
