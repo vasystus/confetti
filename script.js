@@ -21,4 +21,34 @@ const colors = [
     {front: 'pink', back: 'darkpink'}
 ];
 
+randomRange = (min, max) => Math.random() * (max - min) + min;
 
+initConfetti= () => {
+    for(let i = 0; i < confettiCount; i++) {
+        confetti.push({
+            color:colors[Math.floor(randomRange(0, colors.length))],
+            dimensions: {
+                x: randomRange(10,20),
+                y: randomRange(10,30)
+            },
+            position:{
+                x: randomRange(0, canvas.width),
+                y: canvas.height-1
+            },
+            rotation: randomRange(0, 2 * Math.PI),
+            scale: {
+                x: 1,
+                y: 1
+            },
+            velocity: {
+                x: randomRange(-25,25),
+                y: randomRange(0,-50)
+            }
+        });
+    } 
+}; 
+
+//add Event Listener on button
+button.addEventListener('click', function () {
+    initConfetti();
+});
