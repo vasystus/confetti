@@ -53,3 +53,18 @@ initConfetti= () => {
 button.addEventListener('click', function () {
     initConfetti();
 });
+
+//render
+render = () => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    confetti.forEach((confetta, index)=> {
+     let width = confetta.dimensions.x * confetta.scale.x;
+     let height = confetta.dimensions.y * confetta.scale.y;
+
+//move canvas to the position and rotate
+     context.translate(confetta.position.x, confetta.position.y);
+     context.rotate(confetta.rotation);
+//control the velocity
+    })
+}
