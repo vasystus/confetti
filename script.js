@@ -66,5 +66,8 @@ render = () => {
      context.translate(confetta.position.x, confetta.position.y);
      context.rotate(confetta.rotation);
 //control the velocity
+     confetta.velocity.x += confetta.velocity.x;
+     confetta.velocity.y = Math.min(confetta.velocity.y + gravity, terminalVelocity);
+     confetta.velocity.y += Math.random() > 0.5 ? Math.random() : -Math.random();
     })
 }
