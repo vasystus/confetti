@@ -69,5 +69,18 @@ render = () => {
      confetta.velocity.x += confetta.velocity.x;
      confetta.velocity.y = Math.min(confetta.velocity.y + gravity, terminalVelocity);
      confetta.velocity.y += Math.random() > 0.5 ? Math.random() : -Math.random();
+
+//set position
+     confetta.position.x += confetta.velocity.x;
+     confetta.position.y += confetta.velocity.y; 
+
+//delete confetti when out of frame
+     if(confetta.position.y >= canvas.height) confetti.splice(index,1);
+
+//loop confetta x position
+     if(confetta.position.x > canvas.width) confetta.position.x = 0;
+     if(confetta.position.x < 0) confetta.position.x = canvas.width;
+
+//spin confetta by scaling y 
     })
 }
