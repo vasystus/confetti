@@ -82,5 +82,17 @@ render = () => {
      if(confetta.position.x < 0) confetta.position.x = canvas.width;
 
 //spin confetta by scaling y 
-    })
-}
+     confetta.scale.y = MAth.cos(confetta.position.y * 0.1);
+     context.fillStyle = confetta.scale.y > 0 ? confetta.color.front : confetta.color.back;
+
+ //draw confetti
+     context.fillRect(-width/2, -height/2, width, height);
+
+//reset transform
+     context.setTransform(1,0,0,1,0,0);
+});
+
+//fire off another round of confetti
+if (confetti.length <= 10)initConfetti();
+ window.requestAnimationFrame(render);
+};
